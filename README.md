@@ -1,6 +1,6 @@
 # Examples Using Plot.ly
 
- - [State Energy Data System (SEDS)](https://github.com/Data-Science-Projects/plotly_examples/tree/master/seds)
+ - [State Energy Data System (SEDS)](https://data-science-projects.github.io/plotly_examples/seds/seds.html)
 
 ## More Resources
 
