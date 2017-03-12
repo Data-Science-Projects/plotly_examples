@@ -20,7 +20,7 @@ The original data source is available on a state by state basis, or for the US a
 
 The code below downloads the data, imports it and tidies it into a long format. This code also includes unit codes, which, at the time of writing, are of my own invention.
 
-The code is hidden in this file so that the plots can be seen, which is the focus of the coursework. The code can be seen in the Rmd file in this [Github repository]().
+The data wrangling code is hidden in this file so that the plots can be more easily seen, as they are the focus of the coursework. The code can be seen in the Rmd file in this [Github repository](https://github.com/Data-Science-Projects/plotly_examples/tree/master/seds).
 
 ```{r setting_up_variables, echo = FALSE}
 #All US states, excluding "US", including "DC"
@@ -163,7 +163,7 @@ stopifnot(nrow(msn_codes[msn_codes$Units_Code == "",]) == 0)
 all_states_long_df$Units_Code <- msn_codes$Units_Code[match(all_states_long_df$MSN, msn_codes$MSN)]
 ```
 
-```{r subset_by_msn, echo = FALSE}
+```{r subset_by_msn}
 #Subset data by MSN so that I can plot for MSN
 #Note that creating the matrix with a list data type is important, else you can't add dataframes into cells
 msn_subsets_mtrx <- matrix(list(), nrow = 2, ncol = nrow(msn_codes))
@@ -175,8 +175,19 @@ for (msn_code in msn_codes$MSN) {
 }
 ```
 
-```{r plotly_lines}
-#This syntax for using ployly in a loop comes from here:
+#Plots
+
+There are two types of plots here: 
+
+  - Line plots, showing a specific type of energy consumable for all states over the sampled time period
+  - Choropleth maps, showing a specific consumable for a specific year.
+ 
+##Line Plots
+
+These plots show the consumption for all states for a given consumable, identified by a MSN code, across the sampled time period.
+
+```{r plotly_lines, warning = FALSE}
+#This syntax for using plotly in a loop comes from here:
 #https://github.com/ropensci/plotly/issues/273
 line_plot_gatherer <- htmltools::tagList()
 col_counter <- 1
@@ -195,19 +206,22 @@ for (msn_code in msn_codes$MSN) {
 line_plot_gatherer
 ```
 
-
 ## Choropleth Maps
+
+These plots should show the consumption for all states for a given consumable, identified by a MSN code, for a given year.
+
 There is a bug with, possibly, plotting multiple maps that this code illustrates. 
 This could be user error also.
-It may be related to:
-https://github.com/ropensci/plotly/issues/273
+It may be related to: https://github.com/ropensci/plotly/issues/273
+
 There are two main issues:
-1 - Each map seems to be using the same dataframe in the map values, though the debug title seems to show that there is a distinct data frame when the map is created.
-2 - Trying to plot more than two maps means that no data at all is shown in the maps.
+
+  1. Each map seems to be using the same dataframe in the map values, though the debug title seems to show that there is a distinct data frame when the map is created.
+  2. Trying to plot more than two maps means that no data at all is shown in the maps.
 
 I am keeping this here as an example I can refer to if needed, so I want to publish it also. The coursework deadline is today.
 
-```{r, echo=FALSE, message=FALSE}
+```{r choropleth_maps}
 # Make state borders red
 borders <- list(color = toRGB("red"))
 # Set up some mapping options
