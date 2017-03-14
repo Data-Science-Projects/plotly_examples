@@ -1,6 +1,7 @@
 # Examples Using Plot.ly
 
  - [State Energy Data System (SEDS)](https://data-science-projects.github.io/plotly_examples/seds/seds.html)
+ - [SEDS Shiny app with Plotly maps](https://data-science-projects.github.io/plotly_examples/shiny_seds/seds_all_statesPres.html#1)
 
 ## More Resources
 
