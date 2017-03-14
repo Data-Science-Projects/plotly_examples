@@ -15,13 +15,13 @@ The State Energy Data Systems data is explained at https://www.eia.gov/state/sed
 
 ## The Interactive Map
 
-The Shiny app shows a map, created with Plotly, and controls that allow you to select a year and a MSN. 
+The Shiny app shows a map, created with Plotly, and controls that allow you to select a year and a MSN. It looks like this:
 
 <img src="seds_shiny_map_app.png" width="500">
 
-The code is available at:
+The app is at: https://nathan-to.shinyapps.io/shiny_seds/
 
-https://github.com/Data-Science-Projects/plotly_examples/tree/master/shiny_seds
+The code is available at: https://github.com/Data-Science-Projects/plotly_examples/tree/master/shiny_seds
 
 ## The Data
 
