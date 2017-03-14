@@ -1,0 +1,38 @@
+State Energy Data Systems (SEDS) Interactive Maps with Shiny and Plotly
+========================================================
+author: Nathan Sowatskey - Coursera/John Hopkins Data Science Specilisation
+date: March 14 2017
+autosize: true
+
+What is SEDS Data?
+========================================================
+
+The State Energy Data Systems data is explained at https://www.eia.gov/state/seds/
+
+ - Source of the U.S. Energy Information Administration's (EIA) comprehensive state energy statistics
+ - Historical time series of energy production, consumption, prices, and expenditures by state 
+ - Defined as consistently as possible over time and across sectors for analysis and forecasting purposes
+
+The Interactive Map
+========================================================
+
+The Shiny app shows a map, created with Plotly, and controls that allow you to select a year and a MSN. 
+
+The map will then show state by state values for that MSN and year.
+
+<img src="seds_shiny_map_app.png" width="2000">
+
+
+The Data
+========================================================
+
+The data used is based on the SEDS data, in a tidied form available in Kaggle here:
+
+https://www.kaggle.com/nathanto/seds-1960-2014F
+
+The R code for downloadig and tidying the data is also shown at the link above
+
+The Code
+========================================================
+
+The code is available at 
